@@ -16,11 +16,11 @@ class Fleet:
 
     def general_speed(self):
         velocity = (self.weight / self.speed + random.choice(Fleet.wind)) * 15 - (self.luggage / 100)
-        print(f'gemis "{self.name}" sichqarea {velocity}')
+        print(f'speed of ship "{self.name}" is {velocity}')
         counting = 0
         while True:
             if self.distance <= 0:
-                print("gemma '{}'  danishnulebis adgils miaghwia {} satshi".format(self.name, counting))
+                print("ship '{}'  got in destination at {} hours".format(self.name, counting))
                 break
             self.distance -= velocity
             counting += 1
@@ -29,11 +29,11 @@ class Fleet:
 
     def submarine_speed(self):
         velocity = (self.weight / self.speed + random.choice(Fleet.under_water)) * 30 - (self.luggage / 100)
-        print(f'gemis "{self.name}" sichqarea {velocity}')
+        print(f'speed of ship "{self.name}" is {velocity}')
         counting = 0
         while True:
             if self.distance <= 0:
-                print("gemma '{}'  danishnulebis adgils miaghwia {} satshi".format(self.name, counting))
+                print("ship '{}'  got in destination at {} hours".format(self.name, counting))
                 break
             self.distance -= velocity
             counting += 1
@@ -42,6 +42,6 @@ class Fleet:
 
     def rifle(self):
         if self.ammo >= random.randrange(2, 101):
-            print("mteri ganadgurebulia {} - s mier".format(self.name))
+            print("Enemy is destroyed by {}".format(self.name))
         else:
-            print("samwuxarod gemi '{}' ganadgurebulia :( ".format(self.name))
+            print("unfortunately the ship '{}' is destroyed by enemy :( ".format(self.name))
